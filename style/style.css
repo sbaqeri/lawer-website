@@ -1,0 +1,1311 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* font family */
+@font-face {
+  font-family: "gothic";
+  src: url("../font-family/Gothic_A1_Text/Gothic_A1/GothicA1-Medium.ttf");
+}
+@font-face {
+  font-family: "gothic thin";
+  src: url("../font-family/Gothic_A1_Text/Gothic_A1/GothicA1-Thin.ttf");
+}
+@font-face {
+  font-family: "gothic light";
+  src: url("../font-family/Gothic_A1_Text/Gothic_A1/GothicA1-Light.ttf");
+}
+@font-face {
+  font-family: "libre";
+  src: url("../font-family/Libre_Caslon_Text/LibreCaslonText-Regular.ttf");
+}
+/* font icon */
+@font-face {
+  font-family: "icomoon";
+  src: url("../font-icon/fonts/icomoon.eot?a9jodp");
+  src: url("../font-icon/fonts/icomoon.eot?a9jodp#iefix")
+      format("embedded-opentype"),
+    url("../font-icon/fonts/icomoon.ttf?a9jodp") format("truetype"),
+    url("../font-icon/fonts/icomoon.woff?a9jodp") format("woff"),
+    url("../font-icon/fonts/icomoon.svg?a9jodp#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-menu:before {
+  content: "\e906";
+}
+.icon-close:before {
+  content: "\e907";
+}
+.icon-arrow-right:before {
+  content: "\e904";
+}
+.icon-search:before {
+  content: "\e905";
+}
+.icon-chevron-right:before {
+  content: "\e900";
+}
+.icon-chevron-left:before {
+  content: "\e901";
+}
+.icon-chevron-down:before {
+  content: "\e902";
+}
+.icon-chevron-up:before {
+  content: "\e903";
+}
+/* root */
+:root {
+  --primary-color: rgb(225, 79, 86);
+  --secondary-color: rgb(144, 144, 149);
+  --dark-color: #21202a;
+  --text-light: rgb(144, 144, 149);
+}
+/* ul li */
+ul,
+li {
+  list-style: none;
+}
+/* img */
+img {
+  display: block;
+  width: 100%;
+}
+/* a */
+a {
+  text-decoration: none;
+}
+/* btn */
+.btn {
+  padding: 1rem 2rem;
+  box-shadow: 10px 10px rgba(138, 137, 137, 0.685);
+  background-color: var(--primary-color);
+}
+button {
+  border: none;
+  outline: none;
+}
+/* container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+/* current page */
+.current-page {
+  color: var(--primary-color) !important;
+}
+/* elevator */
+.elevator {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  display: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 60;
+  border-radius: 5px;
+}
+.icon-chevron-up {
+  font-size: 12px;
+}
+/* header */
+#header {
+  width: 100%;
+  height: 250vh;
+  background: url("../images/Rectangle-23.jpg") no-repeat center top;
+  background-size: cover;
+}
+/* burger */
+.burger-icon {
+  display: none;
+}
+/* nav */
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0;
+}
+.nav .menu {
+  display: flex;
+  align-items: center;
+  transition: 1s;
+}
+.nav .menu li {
+  padding: 0 1rem;
+}
+.nav .menu li:last-child {
+  padding-right: 0;
+}
+.nav .menu li a {
+  font-size: 18px;
+  font-family: "gothic";
+  color: white;
+  transition: 0.3s;
+}
+.nav .menu li a:hover {
+  color: var(--primary-color);
+}
+/* search */
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.959);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 20;
+}
+.input-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search .input-search input {
+  font-size: 50px;
+  margin-left: 3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: "gothic thin";
+}
+.search i {
+  align-self: flex-start;
+  font-size: 30px;
+  padding: 2rem;
+  cursor: pointer;
+}
+.search .blinking-cursor {
+  display: flex;
+  width: 1px;
+  height: 50px;
+  background-color: black;
+  color: black;
+  animation: 1s blink step-end infinite;
+}
+@keyframes blink {
+  from,
+  to {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+}
+/* hero */
+.hero {
+  width: 100%;
+  margin: 10rem 0;
+}
+.hero .hero-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.hero .hero-title .first-title h2 {
+  font-size: 2vw;
+  font-family: "gothic thin";
+  color: var(--primary-color);
+  letter-spacing: 2px;
+}
+.hero .hero-title .second-title {
+  padding: 2rem 0;
+}
+.hero .hero-title .second-title h1 {
+  font-size: 5vw;
+  font-family: "libre";
+  color: white;
+  letter-spacing: 3px;
+  font-weight: lighter;
+}
+.hero .hero-title .third-title h2 {
+  font-size: 3vw;
+  color: var(--secondary-color);
+  font-family: "gothic thin";
+  letter-spacing: 2px;
+}
+.contact-btn {
+  padding: 5rem 0;
+  width: fit-content;
+}
+.contact-btn a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-family: "gothic";
+  transition: 0.5s;
+}
+.contact-btn a i {
+  margin-left: 0.5rem;
+  font-size: 12px;
+}
+.contact-btn:hover a {
+  box-shadow: 0px 0px var(--secondary-color);
+}
+/* main */
+
+/* home about */
+.home-about {
+  width: 100%;
+  background: url("../images/Rectangle-24.jpg") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15rem 0;
+}
+.home-about .about-title,
+.home-practice .practice-title,
+.law-firm .law-title,
+.home-news .news-title,
+.home-contact .contact-title,
+.practice-area .practice-area-title {
+  width: 100%;
+  text-align: left;
+}
+.home-about .about-title p,
+.home-practice .practice-title p,
+.law-firm .law-title p:first-child,
+.home-news .news-title p,
+.home-contact .contact-title p,
+.practice-area .practice-area-title p {
+  font-size: 18px;
+  font-family: "gothic";
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+}
+.home-news .news-title p {
+  padding: 0 1rem;
+}
+.home-about .about-title h2,
+.home-practice .practice-title h2,
+.law-firm .law-title h2,
+.home-news .news-title h2,
+.home-contact .contact-title h2 {
+  width: 80%;
+  font-size: 64px;
+  font-family: "libre";
+  letter-spacing: 3px;
+  font-weight: lighter;
+}
+.home-about .comparison {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.home-about .comparison .strategy {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.home-about .comparison .percents {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.home-about .comparison .percents .counter-percent,
+.home-about .comparison .percents .counter-lawyer {
+  color: var(--primary-color);
+  font-size: 64px;
+  font-family: "libre";
+}
+.home-about .comparison .percents .cases,
+.home-about .comparison .percents .lawyer {
+  margin-bottom: 2rem;
+  font-size: 24px;
+  font-family: "gothic";
+}
+.home-about .comparison .strategy .our-strategy h2,
+.home-about .comparison .strategy .our-mission h2 {
+  font-size: 24px;
+  font-family: "libre";
+  color: var(--dark-color);
+  font-weight: lighter;
+  margin-bottom: 1.5rem;
+}
+.home-about .comparison .strategy .our-mission h2 {
+  margin-top: 1rem;
+}
+.home-about .comparison .strategy .our-strategy p,
+.home-about .comparison .strategy .our-mission p {
+  font-size: 18px;
+  font-family: "gothic light";
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+/* home practice */
+.home-practice {
+  width: 100%;
+  background: url("../images/Rectangle-24-1.jpg") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10rem 0;
+  padding-bottom: 20rem;
+}
+.home-practice .practice-title h2 {
+  color: white;
+}
+.home-practice .practice {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+.home-practice .practice .any-practice {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.home-practice .practice .any-practice p:first-child {
+  font-size: 18px;
+  color: var(--primary-color);
+  font-family: "gothic";
+  margin: 1rem 0;
+}
+.home-practice .practice .any-practice a {
+  font-size: 24px;
+  color: white;
+  font-family: "libre";
+  font-weight: lighter;
+  margin: 1.5rem 0;
+  transition: 0.5s;
+}
+.home-practice .practice .any-practice a:hover {
+  color: var(--primary-color);
+}
+.home-practice .practice .any-practice p:last-child {
+  font-size: 18px;
+  color: var(--text-light);
+  font-family: "gothic";
+}
+/* law firm */
+.law-firm {
+  width: 100%;
+  background: url("../images/Rectangle-25.jpg") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10rem 0;
+  padding-bottom: 20rem;
+  padding-top: 5rem;
+}
+.law-firm .law-title h2 {
+  font-size: 90px;
+}
+.law-firm .law-title .call {
+  width: 50%;
+  font-size: 30px;
+  color: var(--text-light);
+  font-family: "gothic";
+  margin: 1.5rem 0;
+}
+.law-firm .law-title .call span {
+  color: var(--primary-color);
+}
+/* home news */
+.home-news {
+  width: 100%;
+  background: url("../images/Rectangle-26.jpg") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8rem 0;
+  padding-bottom: 28rem;
+}
+.home-news .news-title h2 {
+  width: 60%;
+  font-size: 88px;
+  color: white;
+}
+.home-news .news {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.home-news .news .any-news {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 1rem;
+}
+.home-news .news .any-news .news-img,
+.home-news .news .any-news .news-description,
+.home-news .news .any-news .news-date {
+  width: 100%;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.home-news .news .any-news img {
+  transform: scale(1);
+  transition: 1s;
+}
+.home-news .news .any-news img:hover {
+  transform: scale(1.2);
+}
+.home-news .news .any-news .news-description a {
+  font-size: 24px;
+  font-family: "libre";
+  font-weight: lighter;
+  color: white;
+  transition: 0.5s;
+}
+.home-news .news .any-news .news-description a:hover,
+.home-news .news .any-news .news-date p:hover {
+  color: var(--primary-color);
+}
+.home-news .news .any-news .news-date p {
+  font-size: 18px;
+  font-family: "gothic";
+  color: var(--text-light);
+  word-spacing: 3px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+/* home contact */
+.home-contact {
+  width: 100%;
+  height: 250vh;
+  background: url("../images/Rectangle-28.jpg") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10rem 0;
+}
+.contact-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+.contact-info .contact-tell {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.contact-info .contact-tell p {
+  width: 95%;
+  font-size: 18px;
+  font-family: "gothic light";
+  color: var(--text-light);
+  margin: 2rem 0;
+}
+.contact-info .contact-tell p a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+.contact-info .contact-tell p a:hover {
+  color: var(--text-light);
+}
+.contact-info .contact-tell span {
+  font-size: 36px;
+  font-family: "libre";
+  font-weight: lighter;
+  color: var(--dark-color);
+  transition: 0.3s;
+}
+.contact-info .contact-tell span:hover {
+  color: var(--primary-color);
+}
+.contact-info .contact-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.contact-info .contact-form .form {
+  width: 100%;
+}
+.contact-info .contact-form .form .form-control {
+  width: 100%;
+  margin: 2rem 0;
+}
+.contact-info .contact-form .form .form-control label {
+  font-size: 14px;
+  font-family: "gothic light";
+  color: var(--text-light);
+}
+.contact-info .contact-form .form .form-control p {
+  font-size: 14px;
+  font-family: "gothic light";
+  color: var(--text-light);
+}
+.contact-info .contact-form .form .form-control p a {
+  color: var(--dark-color);
+  text-decoration: underline;
+}
+.contact-info .contact-form .form .form-control input,
+.contact-info .contact-form .form .form-control textarea {
+  border: none;
+  outline: none;
+  padding: 1.5rem 1rem;
+  font-size: 18px;
+  font-family: "gothic light";
+  color: var(--text-light);
+  margin: 0.5rem 0;
+}
+.contact-info .contact-form .form .form-control textarea {
+  padding: 1.5rem 1rem;
+  padding-bottom: 5rem;
+}
+.contact-info .contact-form .form .form-control input,
+.contact-info .contact-form .form .form-control textarea {
+  width: 100%;
+}
+
+/* about page */
+#header2 {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/about.jpg") no-repeat center top;
+  background-size: cover;
+}
+.hero .hero-title1 {
+  text-align: center;
+}
+/* about description */
+.about-description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+}
+.about-description .first-description,
+.about-description .second-description {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+.about-description .first-description .desc-title,
+.about-description .second-description .desc-img1 {
+  width: 40%;
+}
+.about-description .first-description .desc-title p {
+  font-size: 1.5vw;
+  color: var(--primary-color);
+  font-family: "gothic light";
+  margin-bottom: 1.5rem;
+}
+.about-description .first-description .desc-title h2,
+.about-description .second-description .desc-title1 h2 {
+  font-size: 5vw;
+  color: var(--dark-color);
+  font-family: "libre";
+  font-weight: lighter;
+  margin-bottom: 1.5rem;
+}
+.about-description .first-description .desc-title h3,
+.about-description .second-description .desc-title1 h3 {
+  font-size: 2.5vw;
+  color: var(--text-light);
+  font-family: "gothic thin";
+  margin-bottom: 1.5rem;
+}
+.about-description .second-description .desc-title1 h3 {
+  font-size: 1.3vw;
+  margin-bottom: 0.8rem;
+}
+.about-description .first-description .desc-img,
+.about-description .second-description .desc-title1 {
+  width: 45%;
+}
+/* our work */
+.our-work {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f5f7;
+  padding: 10rem 0;
+}
+.our-work .our-work-title {
+  width: 100%;
+  text-align: left;
+}
+.our-work .our-work-title p {
+  color: var(--primary-color);
+  font-size: 1.5vw;
+  font-family: "gothic light";
+}
+.our-work .our-work-title h2 {
+  width: 50%;
+  color: var(--dark-color);
+  font-size: 4vw;
+  font-family: "libre";
+  font-weight: lighter;
+}
+.our-work .our-work-gallery {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 5rem 0;
+}
+.our-work .our-work-gallery .any-work {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1.5rem;
+  margin-bottom: 3rem;
+  perspective: 1000px;
+}
+.our-work .our-work-gallery .any-work .any-work-title {
+  width: 100%;
+  margin: 2rem 0;
+}
+.our-work .our-work-gallery .any-work .any-work-title h2 {
+  font-size: 1.8vw;
+  color: var(--dark-color);
+  font-family: "libre";
+  font-weight: lighter;
+  margin-bottom: 0.7vw;
+}
+.our-work .our-work-gallery .any-work .any-work-title span {
+  font-size: 1.3vw;
+  font-family: "gothic light";
+  color: var(--primary-color);
+}
+.our-work .our-work-gallery .any-work .any-work-title p {
+  font-size: 1.3vw;
+  font-family: "gothic light";
+  color: var(--text-light);
+  margin: 1.5vw 0;
+}
+.our-work-gallery .any-work .any-work-img {
+  overflow: hidden;
+}
+.any-work-img img {
+  transform: scale(1);
+  transition: 0.3s;
+}
+.any-work-img img:hover {
+  transform: scale(1.2);
+}
+
+/* home about */
+.home-about1 {
+  width: 100%;
+  background: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15rem 0;
+}
+.home-about .comparison2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem 0;
+}
+.home-about1 .comparison .strategy {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home-about1 .comparison .strategy .our-strategy,
+.home-about1 .comparison .strategy .our-mission {
+  width: 50%;
+  padding: 0 3rem;
+}
+.home-about1 .comparison .strategy .contact-btn {
+  display: none;
+}
+/* practice page */
+#header3 {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/Rectangle-23-2.jpg") no-repeat center center;
+  background-size: cover;
+}
+/* practice area */
+.practice-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 13rem 0;
+}
+.practice-area .practice-area-title h2 {
+  width: 60%;
+  font-size: 4vw;
+  font-family: "libre";
+  letter-spacing: 3px;
+  font-weight: lighter;
+}
+/* legal services */
+.legal-services {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5rem 0;
+}
+.legal-services .any-legal-service {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.legal-services .any-legal-service .legal-service-img {
+  overflow: hidden;
+}
+.legal-services .any-legal-service .legal-service-img img {
+  filter: grayscale(100%);
+  transform: scale(1);
+  transition: 0.3s;
+}
+.legal-services .any-legal-service .legal-service-img:hover img {
+  filter: none;
+  transform: scale(1.2);
+}
+.legal-services .any-legal-service .legal-service-title {
+  width: 100%;
+  margin: 1.7rem 0;
+}
+.legal-services .any-legal-service .legal-service-title span {
+  color: var(--primary-color);
+  font-size: 1.7vw;
+  font-family: "gothic light";
+  margin-bottom: 1rem;
+}
+.legal-services .any-legal-service .legal-service-title h2 {
+  font-size: 1.7vw;
+  font-family: "libre";
+  font-weight: lighter;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+}
+.legal-services .any-legal-service .legal-service-title p {
+  font-size: 1.3vw;
+  font-family: "gothic light";
+  color: var(--text-light);
+}
+/* pricing page */
+.nav-price {
+  background-color: black;
+}
+.pricing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+  justify-content: center;
+  align-items: center;
+}
+.pricing .price-title {
+  width: 100%;
+  text-align: center;
+}
+.pricing .price-title span {
+  font-size: 1.7vw;
+  color: var(--primary-color);
+  font-family: "gothic light";
+}
+.pricing .price-title h2 {
+  font-size: 5vw;
+  font-family: "libre";
+  font-weight: lighter;
+  color: var(--dark-color);
+  margin: 1.7rem 0;
+}
+.pricing .price-title p {
+  width: 75%;
+  color: var(--text-light);
+  font-size: 2.5vw;
+  font-family: "libre";
+  font-weight: lighter;
+  margin: 0 auto;
+}
+.pricing .price-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 0;
+  flex-wrap: wrap;
+}
+.pricing .price-box .any-price {
+  width: 30%;
+  background-color: #f4f5f7;
+  padding: 4rem 3rem;
+  transform: scale(1);
+  transition: 0.5s;
+  margin-bottom: 3rem;
+}
+.pricing .price-box .any-price:hover {
+  transform: scale(1.2);
+}
+.pricing .price-box .any-price h2 {
+  width: 100%;
+  font-size: 2.5vw;
+  color: var(--dark-color);
+  font-family: "libre";
+  font-weight: lighter;
+  margin-bottom: 2rem;
+}
+.pricing .price-box .any-price p {
+  width: 100%;
+  font-size: 1.3vw;
+  font-family: "gothic light";
+  color: var(--text-light);
+  margin-bottom: 3.5rem;
+}
+.pricing .price-box .any-price:nth-child(2) p {
+  margin-bottom: 2.7rem;
+}
+.pricing .price-box .any-price:nth-child(3) p {
+  margin-bottom: 4rem;
+}
+.pricing .price-box .any-price span {
+  font-family: "gothic";
+  font-size: 5vw;
+  color: var(--primary-color);
+}
+/* search page */
+.search-part {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+}
+.search-part .search-box {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 3px;
+}
+.search-part .search-box input {
+  width: 80%;
+  border: none;
+  outline: none;
+  padding: 1.5rem 0.7rem;
+  font-family: "gothic light";
+  font-size: 1.3vw;
+}
+.search-part .search-box i {
+  font-size: 2vw;
+  color: var(--primary-color);
+  font-weight: bolder;
+}
+.search-part p {
+  font-size: 2vw;
+  font-family: "gothic light";
+  color: var(--dark-color);
+}
+/* responsive */
+@media (max-width: 1248px) {
+  /* container */
+  .container {
+    padding: 0 25px;
+  }
+  .law-firm .law-title h2 {
+    width: 100%;
+    font-size: 40px;
+  }
+}
+@media (max-width: 1025px) {
+  /* home about */
+  .home-about {
+    background: unset;
+    background-color: white;
+  }
+  .home-about .comparison {
+    display: flex;
+    flex-direction: column;
+  }
+  .home-about .comparison .percents {
+    width: 70%;
+    flex-direction: row;
+    margin-top: 3rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .home-about .comparison .strategy {
+    width: 100%;
+  }
+  .home-about1 .comparison .strategy {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .home-about1 .comparison .strategy .our-strategy,
+  .home-about1 .comparison .strategy .our-mission {
+    width: 100%;
+    padding: 0 3rem;
+  }
+  /* home practice */
+  .home-practice {
+    height: unset;
+    background: url("../images/Rectangle-24-1.jpg") no-repeat left top;
+  }
+  .home-practice .practice .any-practice {
+    width: 40%;
+  }
+  /* home news */
+  .home-news {
+    width: 100%;
+    height: unset;
+    background: url("../images/Rectangle-26.jpg");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .home-news .news-title h2 {
+    width: 100%;
+    font-size: 60px;
+    padding: 0 1rem;
+  }
+  .home-news .news {
+    flex-direction: column;
+  }
+  /* home contact */
+  .home-contact {
+    width: 100%;
+    height: unset;
+    background: url("../images/Rectangle-28.jpg") no-repeat top right;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10rem 0;
+  }
+  .contact-info {
+    flex-direction: column;
+  }
+  .contact-info .contact-form {
+    width: 100%;
+  }
+  /* our work */
+  .our-work .our-work-gallery .any-work {
+    width: 50%;
+  }
+  .our-work .our-work-gallery .any-work .any-work-title h2 {
+    font-size: 3vw;
+  }
+  .our-work .our-work-gallery .any-work .any-work-title span {
+    font-size: 2vw;
+  }
+  .our-work .our-work-gallery .any-work .any-work-title p {
+    font-size: 2vw;
+  }
+  /* about description */
+  .about-description .first-description,
+  .about-description .second-description {
+    width: 100%;
+    flex-direction: column;
+  }
+  .about-description .first-description .desc-title,
+  .about-description .second-description .desc-img1,
+  .about-description .first-description .desc-img,
+  .about-description .second-description .desc-title1 {
+    width: 100%;
+  }
+  .about-description .second-description .desc-title1 h3 {
+    font-size: 2.5vw;
+    margin-bottom: 0.8rem;
+  }
+  .about-description .first-description .desc-title h2,
+  .about-description .second-description .desc-title1 h2 {
+    margin-top: 1rem;
+  }
+  .our-work .our-work-title h2 {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .our-work .our-work-title p {
+    font-size: 2vw;
+  }
+  /* practice area page */
+  .legal-services .any-legal-service {
+    width: 45%;
+  }
+  /* pricing page */
+  .pricing .price-box .any-price {
+    width: 45%;
+  }
+  .pricing .price-box .any-price:last-child {
+    margin: 0 auto;
+  }
+  .pricing .price-box .any-price:nth-child(2) p {
+    margin-bottom: 4rem;
+  }
+  .pricing .price-box .any-price:nth-child(3) p {
+    margin-bottom: 4rem;
+  }
+}
+@media (max-width: 970px) {
+  .nav .menu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: -100%;
+    top: 0%;
+    bottom: 0%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .nav .menu li {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+  .nav .menu li a {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .burger-icon {
+    display: flex;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  .burger-icon .icon-close {
+    position: fixed;
+    z-index: 100;
+    right: 20px;
+  }
+  /* home news */
+  .home-news {
+    width: 100%;
+    height: unset;
+    background: url("../images/Rectangle-26.jpg");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media (max-width: 887px) {
+  .law-firm .law-title .call {
+    width: 70%;
+    font-size: 25px;
+  }
+  /* home practice */
+  .home-practice {
+    width: 100%;
+    height: unset;
+    background: url("../images/Rectangle-24-1.jpg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 3000% auto;
+  }
+  /* home news */
+  .home-news {
+    width: 100%;
+    height: unset;
+    background: url("../images/Rectangle-26.jpg");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media (max-width: 770px) {
+  /* home about */
+  .home-about .comparison .percents {
+    width: 70%;
+    flex-direction: column;
+    margin-top: 3rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  /* home practice */
+  .home-practice {
+    width: 100%;
+    height: unset;
+    background: url("../images/Rectangle-24-1.jpg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 3000% auto;
+  }
+  .home-practice .practice-title h2 {
+    width: 100%;
+    font-size: 30px;
+  }
+  .home-practice .practice {
+    flex-direction: column;
+  }
+  .home-practice .practice .any-practice {
+    width: 100%;
+  }
+  /* home news */
+  .home-news {
+    width: 100%;
+    height: unset;
+    background: url("../images/Rectangle-26.jpg");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /* low firm */
+  .law-firm {
+    width: 100%;
+    height: unset;
+    background: url(../images/Rectangle-25.jpg) no-repeat left top;
+  }
+  .law-firm .law-title h2 {
+    font-size: 30px;
+  }
+  .law-firm .law-title .call {
+    font-size: 20px;
+  }
+  /* our work */
+  .our-work .our-work-gallery .any-work {
+    width: 100%;
+  }
+  .our-work .our-work-gallery .any-work .any-work-title h2 {
+    font-size: 4vw;
+  }
+  .our-work .our-work-gallery .any-work .any-work-title span {
+    font-size: 2.5vw;
+  }
+  .our-work .our-work-gallery .any-work .any-work-title p {
+    font-size: 2.5vw;
+  }
+  /* practice area page */
+  .legal-services .any-legal-service {
+    width: 100%;
+  }
+  .legal-services .any-legal-service .legal-service-title h2 {
+    font-size: 2.5vw;
+  }
+  .legal-services .any-legal-service .legal-service-title p {
+    font-size: 2vw;
+  }
+  /* pricing page */
+  .pricing .price-box .any-price {
+    width: 100%;
+  }
+  .pricing .price-box .any-price h2 {
+    font-size: 4vw;
+  }
+  .pricing .price-box .any-price p {
+    font-size: 2.5vw;
+  }
+  .pricing .price-box .any-price:hover {
+    transform: scale(1.1);
+  }
+}
+@media (max-width: 770px) {
+  /* hero */
+  .contact-btn a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 500px) {
+  .home-about .about-title h2 {
+    width: 100%;
+    font-size: 30px;
+  }
+  /* home news */
+  .home-news .news-title h2 {
+    width: 100%;
+    font-size: 30px;
+  }
+  /* home contact */
+  .home-contact .contact-title h2 {
+    width: 100%;
+    font-size: 30px;
+  }
+  .contact-info .contact-tell {
+    width: 100%;
+  }
+  .contact-info .contact-tell p {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  /* hero */
+  .hero {
+    width: 100%;
+    margin: 5rem 0;
+  }
+  .hero .hero-title .third-title h2 {
+    font-size: 18px;
+  }
+  .contact-btn {
+    width: 100%;
+  }
+  .contact-btn a {
+    font-size: 12px;
+  }
+  /* about home */
+  .home-about .about-title h2 {
+    width: 100%;
+    font-size: 25px;
+  }
+  .home-about .comparison .percents {
+    width: 100%;
+  }
+  .home-about1 .comparison .strategy .our-strategy,
+  .home-about1 .comparison .strategy .our-mission {
+    padding: 0 0rem;
+  }
+  .home-about1 .comparison .strategy .our-strategy,
+  .home-about1 .comparison .strategy .our-mission {
+    width: 100%;
+    padding: 0 0rem;
+  }
+}
