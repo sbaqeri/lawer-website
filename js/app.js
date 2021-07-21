@@ -28,7 +28,7 @@ if (percentCount) {
     if (i >= posts) {
       clearInterval(counterInterval);
     }
-  }, 10);
+  }, 70);
 }
 const lawyerCount = document.querySelector(".counter-lawyer");
 if (lawyerCount) {
@@ -40,7 +40,7 @@ if (lawyerCount) {
     if (i >= posts) {
       clearInterval(counterInterval);
     }
-  }, 10);
+  }, 70);
 }
 // form validation in contact page
 const name2 = document.getElementById("input");
@@ -123,7 +123,7 @@ $(function () {
   $(".burger-icon").hide();
   $(".icon-menu").show();
   if (windowSize <= 970) {
-    $(".menu li:last-child").hide();
+    // $(".menu li:last-child").hide();
     $(".burger-icon").show();
     $(".icon-close").hide();
     $(".icon-menu").on("click", function () {
