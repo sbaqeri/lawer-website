@@ -182,7 +182,7 @@ button {
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 20;
+  z-index: 101;
 }
 .input-search {
   display: flex;
@@ -1137,6 +1137,15 @@ button {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  /* search */
+  .search .input-search input {
+    font-size: 25px;
+    margin-left: 3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: "gothic thin";
+  }
 }
 @media (max-width: 887px) {
   .law-firm .law-title .call {
@@ -1246,6 +1255,14 @@ button {
   }
   .pricing .price-box .any-price:hover {
     transform: scale(1.1);
+  }
+  /* search part */
+  .search-part .search-box input {
+    padding: 1rem 0.7rem;
+    font-size: 2.5vw;
+  }
+  .search-part p {
+    font-size: 3vw;
   }
 }
 @media (max-width: 770px) {
